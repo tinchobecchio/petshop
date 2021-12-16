@@ -1,16 +1,28 @@
 import React from 'react'
+import CartWidget from './CartWidget'
+import LIConLink from './LIConLink'
+
+
 
 const NavBar = () => {
+
+    const itemsMenu = [
+        {name: 'Home', href: '#'},
+        {name: 'Productos', href: '#'},
+        {name: 'Servicios', href: '#'},
+        {name: 'Contacto', href: '#'}
+    ]
+
     return (
         <div className="navbar">
             <div className='navbarContenedor'>
+                
                 <h1>PetShop</h1>
                 <ul className="menu">
-                    <li><a href='#'>Home</a></li>
-                    <li><a href='#'>Productos</a></li>
-                    <li><a href='#'>Servicios</a></li>
-                    <li><a href='#'>Contacto</a></li>
+                    { itemsMenu.map(i => <LIConLink name={i.name} href={i.href} /> ) }
+                    <li><CartWidget /></li>
                 </ul>
+                
             </div>
         </div>
 
