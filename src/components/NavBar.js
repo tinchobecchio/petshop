@@ -19,7 +19,7 @@ const NavBar = () => {
                 
                 <h1>PetShop</h1>
                 <ul className="menu">
-                    { itemsMenu.map(i => <LIConLink name={i.name} href={i.href} /> ) }
+                    { itemsMenu.map(i => <LIConLink name={i.name} href={i.href} key={i.name} /> ) }
                     <li><CartWidget /></li>
                 </ul>
                 

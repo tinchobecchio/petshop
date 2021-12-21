@@ -31,3 +31,27 @@
 }
 
 /* ---------------- FIN NAVBAR ---------------- */
+
+
+
+
+/*###### ItemCount ######*/
+
+#contadorContenedor {
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+  padding: 3px;
+  border: solid 1px rgb(116, 112, 112);
+}
+
+
+
+/* --- FIN ItemCount --- */
+
+
+.contenedorCentro {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
