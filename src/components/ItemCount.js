@@ -18,7 +18,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
     
     return (
         <div className='contenedorCentro'>
-            <p>Alimento Balanceado</p>
 
             <div id="contadorContenedor">
                 <button onClick={restar}>-</button>

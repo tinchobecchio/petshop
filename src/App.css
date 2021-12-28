@@ -72,6 +72,7 @@
   margin-bottom: 15px;
   padding: 2px;
 }
+
 /* --- FIN Item --- */
 
 
@@ -81,9 +82,10 @@
 #contadorContenedor {
   display: flex;
   justify-content: space-between;
-  width: 90px;
-  padding: 3px;
-  border: solid 1px rgb(116, 112, 112);
+  align-content: center;
+  width: 95px;
+  padding: 5px;
+  /* border: solid 1px rgb(116, 112, 112); */
 }
 
 
