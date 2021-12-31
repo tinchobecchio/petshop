@@ -8,7 +8,7 @@ const ItemDetail = ({item}) => {
             <img src={item.pictureUrl} alt={item.title} />
             <p>{item.description}</p>
             <strong>Precio: ${item.price}</strong>
-            <ItemCount stock={5} initial={1} onAdd={(cant) => {alert(`Has agregado ${cant} items al carrito.`)}}/>
+            <ItemCount stock={item.stock} initial={1} onAdd={(cant) => {alert(`Has agregado ${cant} items al carrito.`)}}/>
         </div>
     )
 }

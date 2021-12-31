@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const LIConLink = ({href, name}) => {
     return (
-        <li><a href={href}>{name}</a></li>    
+        <li><Link to={href}>{name}</Link></li>    
     )
 }
 

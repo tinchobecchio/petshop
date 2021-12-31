@@ -30,6 +30,14 @@
   color: white;
 }
 
+.brandTitle {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.brandTitle:hover {
+  color: white;
+}
 /* ---------------- FIN NAVBAR ---------------- */
 
 /*###### ItemList ######*/
@@ -68,9 +76,17 @@
   padding: 10px;
 }
 
-.item button {
+.item a {
   margin-bottom: 15px;
-  padding: 2px;
+  padding: 8px;
+  background-color: rgb(233, 102, 102);
+  text-decoration: none;
+  color: rgb(29, 26, 26);
+  font-weight: bold;
+}
+
+.item a:hover {
+  color: white;
 }
 
 /* --- FIN Item --- */
@@ -79,16 +95,39 @@
 
 /*###### ItemCount ######*/
 
-#contadorContenedor {
+.itemCount {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+
+}
+
+.contadorContenedor {
   display: flex;
   justify-content: space-between;
   align-content: center;
   width: 95px;
   padding: 5px;
-  /* border: solid 1px rgb(116, 112, 112); */
+  margin: 5px;
+  border: solid 1px rgb(116, 112, 112);
+  margin-bottom: 12px;
+  font-weight: bold;
+  background-color: white;
 }
 
+.btnAgregarCarrito {
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: rgb(233, 102, 102);
+  text-decoration: none;
+  color: rgb(29, 26, 26);
+  font-weight: bold;
+  border: none;
+}
 
+.btnAgregarCarrito:hover {
+  color: white;
+}
 
 /* --- FIN ItemCount --- */
 
