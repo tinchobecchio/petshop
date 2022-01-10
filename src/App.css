@@ -33,6 +33,7 @@
 .brandTitle {
   text-decoration: none;
   color: rgb(0, 0, 0);
+  align-self: center;
 }
 
 .brandTitle:hover {
@@ -43,6 +44,7 @@
 /*###### ItemList ######*/
 .itemList {
   display: flex;
+  justify-content: center;
   width: 80%;
   flex-wrap: wrap;
 }
@@ -116,7 +118,6 @@
 }
 
 .btnAgregarCarrito {
-  margin-bottom: 15px;
   padding: 12px;
   background-color: rgb(233, 102, 102);
   text-decoration: none;

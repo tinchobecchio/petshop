@@ -22,7 +22,9 @@ const NavBar = () => {
                 </Link>
                 <ul className="menu">
                     { itemsMenu.map(i => <LIConLink name={i.name} href={i.href} key={i.name} /> ) }
-                    <li><CartWidget /></li>
+                    <li>
+                        <Link to={'/cart'}><CartWidget /></Link>    
+                    </li>
                 </ul>
                 
             </div>
