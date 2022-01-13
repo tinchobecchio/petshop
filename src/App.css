@@ -117,7 +117,7 @@
   background-color: white;
 }
 
-.btnAgregarCarrito {
+.btn {
   padding: 12px;
   background-color: rgb(233, 102, 102);
   text-decoration: none;
@@ -126,7 +126,7 @@
   border: none;
 }
 
-.btnAgregarCarrito:hover {
+.btn:hover {
   color: white;
 }
 

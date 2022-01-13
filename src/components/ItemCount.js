@@ -13,7 +13,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const sumar = () => {
         if(cont < stock) {
             setCont( cont + 1)
-        }  else {alert(`Stock disponible ${stock}`)}
+        }
     }
     
     return (
@@ -25,7 +25,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <button onClick={sumar}>+</button>
             </div>
 
-            <button className='btnAgregarCarrito' onClick={() => onAdd(cont)}>Agregar al carrito</button>
+            <button className='btn' onClick={() => onAdd(cont)}>Agregar al carrito</button>
 
         </div>
     )

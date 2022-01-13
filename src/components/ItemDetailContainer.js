@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
     useEffect(() => { 
         
         const getProducts = () => {
-
+            setCargando(true)
             const ObtenerListado = new Promise((res, rej) => {
 
                 const lista = [
