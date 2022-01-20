@@ -1,27 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import ItemCount from './ItemCount'
 
 const ItemDetail = ({item}) => {
     const [mostrar, setMostrar] = useState(true)
-    const [kant, setKant] = useState(0)
     const {addItem} = useCart()
     
 
     const onAdd = (cant) => {
         setMostrar(false)
-        setKant(cant)
-    }
-
-    useEffect(() => {
-        console.log(kant)
-        if(kant > 0) {
-            addItem(item, kant)
+        if(cant > 0) {
+            addItem(item, cant)
         }
-    }, [kant])
-
-
+    }
 
     return (
         <div className='item'>

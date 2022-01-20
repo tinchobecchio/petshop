@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 import CartWidget from './CartWidget'
 import LIConLink from './LIConLink'
 
 
-
-
 const NavBar = () => {
+    const {cart} = useCart()
 
     const itemsMenu = [
         {name: 'Perros', href: '/category/perros'},
@@ -17,14 +17,11 @@ const NavBar = () => {
         <div className="navbar">
             <div className='navbarContenedor'>
                 
-                <Link to='/' className='brandTitle'>
-                    <h1 >PetShop</h1>
-                </Link>
+                <Link to='/' className='brandTitle'> <h1>PetShop</h1> </Link>                    
+                
                 <ul className="menu">
-                    { itemsMenu.map(i => <LIConLink name={i.name} href={i.href} key={i.name} /> ) }
-                    <li>
-                        <Link to={'/cart'}><CartWidget /></Link>    
-                    </li>
+                    {itemsMenu.map(i => <LIConLink name={i.name} href={i.href} key={i.name} /> )}
+                    {cart.length !== 0 ? <li><Link to={'/cart'}><CartWidget /></Link></li> : <li></li>}
                 </ul>
                 
             </div>
