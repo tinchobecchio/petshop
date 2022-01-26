@@ -17,10 +17,9 @@ const NavBar = () => {
     
         getDocs(collection(db, "categorias"))
         .then((snapshot) => setCategories(snapshot.docs.map((doc) => doc.data())))
+        
     }, []);
     
-
-
     return (
         <div className="navbar">
             <div className='navbarContenedor'>

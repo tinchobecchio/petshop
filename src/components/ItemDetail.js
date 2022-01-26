@@ -7,7 +7,6 @@ const ItemDetail = ({item}) => {
     const [mostrar, setMostrar] = useState(true)
     const {addItem} = useCart()
     
-
     const onAdd = (cant) => {
         setMostrar(false)
         if(cant > 0) {
@@ -28,7 +27,7 @@ const ItemDetail = ({item}) => {
             : <div style={{display: "flex", flexDirection: "column", justifyContent: "spaceBetween", padding: "15px"}}>
 
                 <Link style={{padding: 0}} to={'/cart'}>
-                    <button className='btn'>Terminar compra</button>
+                    <button className='btn'>Ir al carrito</button>
                 </Link>
 
                 <button className='btn' onClick={() => setMostrar(true)}>Volver</button>

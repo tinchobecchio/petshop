@@ -14,7 +14,6 @@ const ItemDetailContainer = () => {
     const { idItem } = useParams()
     const [cargando, setCargando] = useState(true)
 
-
     useEffect(() => {
         setCargando(true)
         const db = getFirestore()
@@ -27,7 +26,6 @@ const ItemDetailContainer = () => {
         setCargando(false)
     },[idItem])
 
-    
     return (
         <div className='contenedorCentro'>
             <h2>Detalles del Producto</h2>

@@ -162,5 +162,30 @@
   padding: 10px;
 }
 
+.padBot {
+  padding-bottom: 50px;
+}
 
 /* --- FIN CART --- */
+
+/*######  FORMULARIO  ######*/
+
+#form {
+  background-color: rgb(238, 231, 231);
+  border-radius: 15px;
+  box-shadow: 2px 2px 10px black;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+
+
+#form label p {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
