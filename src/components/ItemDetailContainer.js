@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
     },[idItem])
 
     return (
-        <div className='contenedorCentro'>
+        <div className='contenedorCentro marginTop'>
             <h2>Detalles del Producto</h2>
             { cargando ? <Spinner /> : <ItemDetail item={producto} /> }
         </div>

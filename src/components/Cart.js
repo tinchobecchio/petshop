@@ -9,7 +9,7 @@ const Cart = () => {
     const {cart, total} = useCart()
 
     return (
-        <div className='contenedorCentro padBot'>
+        <div className='contenedorCentro padBot marginTop'>
             <h1>Mi Carrito</h1>
             {cart.length === 0 
             ? <CartEmpty /> 

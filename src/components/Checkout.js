@@ -43,7 +43,7 @@ const Checkout = () => {
     }
 
 
-    return <div className='contenedorCentro'>
+    return <div className='contenedorCentro marginTop'>
         
         
         {finish ? <CheckoutSuccess idCompra={idCompra}/> :

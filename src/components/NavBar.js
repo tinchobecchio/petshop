@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
-import CartWidget from './CartWidget'
-import LIConLink from './LIConLink'
 import {getFirestore} from '../firebase'
 import {getDocs, collection} from 'firebase/firestore'
+import { MenuButton } from './MenuButton'
+import { MenuOpen } from './MenuOpen'
 
 const NavBar = () => {
     
     const [categories, setCategories] = useState([]);
     const {cart} = useCart()
+    const [open, setOpen] = useState(false);
     
     useEffect(() => {
       
@@ -20,16 +21,22 @@ const NavBar = () => {
         
     }, []);
     
+    const handleClick = () => {
+        setOpen(!open)
+    }
+
     return (
         <div className="navbar">
             <div className='navbarContenedor'>
                 
-                <Link to='/' className='brandTitle'> <h1>PetShop</h1> </Link>                    
-                
-                <ul className="menu">
-                    {categories.map(i => <LIConLink name={i.name} href={i.href} key={i.key} /> )}
-                    {cart.length !== 0 ? <li><Link to={'/cart'}><CartWidget /></Link></li> : <li></li>}
-                </ul>
+                <Link to='/' className='brandTitle'> <h1>PetShop</h1> </Link> 
+                { open ?
+                    <>
+                        <MenuButton open={open} handleClick={handleClick}/>
+                        <MenuOpen categories={categories} cart={cart} handleClick={handleClick}/>
+                    </>
+                :   <MenuButton open={open} handleClick={handleClick}/>
+                }                   
                 
             </div>
         </div>
