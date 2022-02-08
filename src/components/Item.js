@@ -5,7 +5,9 @@ const Item = ({id, title, price, pictureUrl}) => {
     return (
         <div className='item'>
             <h3>{title}</h3>
-            <img src={pictureUrl} alt={title} />
+            <div className='imgContainer'>
+                <img src={pictureUrl} alt={title} />
+            </div>
             <strong>Precio: ${price}</strong>
             <Link to={`/item/${id}`}>Ver Detalles</Link>
         </div>
