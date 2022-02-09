@@ -36,7 +36,6 @@ const ItemListContainer = ({greeting}) => {
     
     return (
         <div className='contenedorCentro marginTop'>
-            <h1 style={{textAlign: 'center'}}>{greeting}</h1>
             { cargando ? <Spinner /> : <ItemList items={productos} /> }
         </div>
     )

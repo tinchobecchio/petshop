@@ -13,6 +13,7 @@ const ItemDetailContainer = () => {
     )
     const { idItem } = useParams()
     const [cargando, setCargando] = useState(true)
+    const [itemValid, setItemValid] = useState(true);
 
     useEffect(() => {
         setCargando(true)
@@ -21,7 +22,13 @@ const ItemDetailContainer = () => {
         const ref = doc(db, 'items', idItem)
 
         getDoc(ref).then( querySnapshot => {
-            setProducto({...querySnapshot.data(), id: querySnapshot.id})
+            
+            if(querySnapshot.data() === undefined) {
+                setItemValid(false)
+            } else {
+                setItemValid(true)
+                setProducto({...querySnapshot.data(), id: querySnapshot.id})
+            }
         })
         setCargando(false)
     },[idItem])
@@ -29,7 +36,7 @@ const ItemDetailContainer = () => {
     return (
         <div className='contenedorCentro marginTop'>
             <h2>Detalles del Producto</h2>
-            { cargando ? <Spinner /> : <ItemDetail item={producto} /> }
+            { cargando ? <Spinner /> : <ItemDetail item={producto} valid={itemValid} /> }
         </div>
     )
 }

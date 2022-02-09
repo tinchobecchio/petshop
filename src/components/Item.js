@@ -9,7 +9,9 @@ const Item = ({id, title, price, pictureUrl}) => {
                 <img src={pictureUrl} alt={title} />
             </div>
             <strong>Precio: ${price}</strong>
-            <Link to={`/item/${id}`}>Ver Detalles</Link>
+            <Link to={`/item/${id}`}>
+                <button className='btn'>Ver Detalles</button>
+            </Link>
         </div>
     )
 }

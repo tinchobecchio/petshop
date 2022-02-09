@@ -7,6 +7,7 @@ const Checkout = () => {
     const [finish, setFinish] = useState(false);
     const [idCompra, setIdCompra] = useState();
     const [buyer, setBuyer] = useState({name: '', phone: '', email: ''});
+    const [emailValid, setEmailValid] = useState(false);
     const {cart, total} = useCart()
 
     const nameChange = (event) => {
@@ -17,6 +18,12 @@ const Checkout = () => {
     }
     const emailChange = (event) => {
         setBuyer({...buyer, email: event.target.value})
+    }
+
+    let email
+    const emailChange2 = (event) => {
+        email = event.target.value
+        email === buyer.email ? setEmailValid(true) : setEmailValid(false);
     }
 
     const finalizarCompra = (event) => {
@@ -32,7 +39,8 @@ const Checkout = () => {
             },
             items: cart,
             date: orderDate,
-            total: total
+            total: total,
+            estado: 'generada'
         }
 
         const db = getFirestore()
@@ -41,7 +49,6 @@ const Checkout = () => {
         addDoc(ordersCollection, order).then( ({id}) => setIdCompra(id))
         setFinish(true)
     }
-
 
     return <div className='contenedorCentro marginTop'>
         
@@ -65,8 +72,18 @@ const Checkout = () => {
                     <p>E-mail:</p>
                     <input type='email' value={buyer.email} onChange={emailChange}/>
                 </label>
+
+                <label>
+                    <p>Vuelva a ingresar su E-mail:</p>
+                    <input type='email' value={email} onChange={emailChange2}/>
+                </label>
                 <br></br>
-                <button className={'btn'} onClick={(event) => finalizarCompra(event)}>Finalizar Compra</button>   
+
+                {emailValid ? 
+                    <button className={'btn'} onClick={(event) => finalizarCompra(event)}>Realizar Compra</button>
+                    : <i>Ingrese sus datos correctamente para finalizar la compra.</i>   
+                }
+                   
                     
             </form>
         </>
