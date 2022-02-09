@@ -16,7 +16,7 @@ E-commerce realizado en el curso de  [ReactJs](https://reactjs.org/)  de  [Coder
 
 Este proyecto requiere  [NodeJs](https://nodejs.org/)  para su ejecución.
 
-git clone https://github.com/tinchobecchio/petshop
-cd petshop
-npm install
-npm start
+- git clone https://github.com/tinchobecchio/petshop
+- cd petshop
+- npm install
+- npm start
